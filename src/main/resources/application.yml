@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: bkk-data-api
+  main:
+    banner-mode: "off"
+  kafka:
+    producer:
+      #bootstrap-servers: "localhost:6667"
+      bootstrap-servers: "localhost:9092"
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+management:
+  server:
+    port: 9001
+  endpoint:
+    health:
+      show-details: "ALWAYS"
+  security:
+    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  metrics:
+    tags:
+      application: ${spring.application.name}
+
+server:
+  port: 8004
+  servlet:
+    application-display-name: "BKK"
+    context-path: /bkk
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: FULL
+  httpclient:
+    follow-redirects: false
+
+scheulder:
+  bkkkScheulder:  "0 */5 * ? * *"
+
+api:
+  bkkUrl: "http://localhost:8002/bkk/prod"
+  weatherUrl: "http://localhost:8001/bkk/prod"
+  key: "2e825506-7aea-4fe1-ad48-5fa87b4ce726"
