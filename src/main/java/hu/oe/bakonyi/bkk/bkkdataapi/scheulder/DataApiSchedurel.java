@@ -1,5 +1,6 @@
 package hu.oe.bakonyi.bkk.bkkdataapi.scheulder;
 
+import feign.FeignException;
 import hu.oe.bakonyi.bkk.bkkdataapi.client.BkkClient;
 import hu.oe.bakonyi.bkk.bkkdataapi.kafka.KafkaService;
 import hu.oe.bakonyi.bkk.bkkdataapi.service.BkkBusinessDataService;
@@ -33,7 +34,11 @@ public class DataApiSchedurel {
 
     public void sendDataToKafka(){
         bkkClient.getStoredRoutes().forEach(route ->{
-            kafkaService.sendMessages(service.getData(route.getRouteCode()));
+            try{
+                kafkaService.sendMessages(service.getData(route.getRouteCode()));
+            }catch (FeignException ex){
+                log.error("Hiba a viszonylatadatok letöltése közben. {"+route+"}");
+            }
         });
     }
 

@@ -11,7 +11,7 @@ public class BkkBusinessDataV2 {
     private double temperature, humidity, pressure, snow, rain, visibility;
     private double departureDiff, arrivalDiff, value = 0;
     private String routeId, stopId, vehicleModel, tripId;
-    private int month, dayOfWeek;
+    private int month, dayOfWeek, hour;
     private Long lastUpdateTime;
     private byte alert;
 
