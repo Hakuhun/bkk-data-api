@@ -36,11 +36,13 @@ public class WeatherModel200ToBasicWeatherModelConverter{
         }else{
             wModel.setSnowIntensity(0);
         }
+
         if(source.getVisibility() != null){
             wModel.setVisibility(source.getVisibility());
         }else{
             wModel.setVisibility(0);
         }
+
         if (source.getCoord() != null){
             wModel.setLocation(Location.builder().lat(source.getCoord().getLat()).lon(source.getCoord().getLon()).build());
         }

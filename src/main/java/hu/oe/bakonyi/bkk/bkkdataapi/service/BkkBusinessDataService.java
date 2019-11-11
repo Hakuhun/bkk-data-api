@@ -63,7 +63,7 @@ public class BkkBusinessDataService {
                setLastUpdateTime(lastUpdate.getEpochSecond());
                setDayOfWeek(lastUpdate.atZone(ZoneId.of("Europe/Budapest")).get(ChronoField.DAY_OF_WEEK));
                setMonth(lastUpdate.atZone(ZoneId.of("Europe/Budapest")).get(ChronoField.MONTH_OF_YEAR));
-               setHour(getActualHour(route.getStopSequence(), route.getDepartureTime(), route.getArrivalTime(), lastUpdate));
+               setHour(getActualHour(route.getStopSequence(), route.getDepartureTime( ), route.getArrivalTime(), lastUpdate));
                setArrivalDiff(route.getArrivalDiff());
                setDepartureDiff(route.getDepartureDiff());
                setHumidity(weather.getMain().getHumidity());
@@ -73,6 +73,7 @@ public class BkkBusinessDataService {
                setSnow(weather.getSnow().get_3h());
                setVehicleModel(route.getModel());
                setAlert((byte) (route.isAlert() ? 1 : 0));
+               setVisibility(weather.getVisibility());
                setValue(0);
             }};
             businessDatas.add(v2);
