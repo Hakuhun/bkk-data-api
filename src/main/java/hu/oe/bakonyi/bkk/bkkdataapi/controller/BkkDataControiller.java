@@ -23,11 +23,11 @@ public class BkkDataControiller {
     @Autowired
     DataApiSchedurel schedurel;
 
-    @GetMapping("prod/route")
-    public ResponseEntity<List<BkkBusinessDataV2>> getRoute(@RequestParam("route") String route){
-        try{
+    @GetMapping("dev/route")
+    public ResponseEntity<List<BkkBusinessDataV2>> getRoute(@RequestParam("route") String route) {
+        try {
             return ResponseEntity.ok(bkkService.getData(route));
-        }catch(FeignException fe){
+        } catch (FeignException fe) {
             log.error(fe.getMessage());
             fe.printStackTrace();
         } catch (Exception e) {
@@ -37,7 +37,7 @@ public class BkkDataControiller {
     }
 
     @GetMapping("dev/call")
-    public ResponseEntity call(){
+    public ResponseEntity call() {
         schedurel.sendDataToKafka();
         return ResponseEntity.ok("Kafka üzenetek elküldve");
     }

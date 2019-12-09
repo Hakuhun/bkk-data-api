@@ -21,14 +21,14 @@ public class KafkaService {
     @Autowired
     private ObjectMapper mapper;
 
-    public void sendMessages(List<BkkBusinessDataV2> messages){
-        messages.forEach(msg->{
+    public void sendMessages(List<BkkBusinessDataV2> messages) {
+        messages.forEach(msg -> {
             sendMessage(msg);
         });
     }
 
-    public void sendMessage(BkkBusinessDataV2 msg){
-        log.info(String.format("$$ -> Producing message --> %s",msg));
+    public void sendMessage(BkkBusinessDataV2 msg) {
+        log.info(String.format("$$ -> Producing message --> %s", msg));
         this.kafkaTemplate.send(TOPIC, UUID.randomUUID().toString(), msg);
     }
 

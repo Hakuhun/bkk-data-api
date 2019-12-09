@@ -18,13 +18,13 @@ public class HeaderInterceptorConfiguration implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        if (request.getRequestURL().toString().contains("bkk/dev")){
-            if(request.getHeader(HttpHeaders.AUTHORIZATION) == null){
+        if (request.getRequestURL().toString().contains("bkk/dev")) {
+            if (request.getHeader(HttpHeaders.AUTHORIZATION) == null) {
                 throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
             }
 
             String remoteApiKey = request.getHeader(HttpHeaders.AUTHORIZATION).toString();
-            if(!apiKey.equals(remoteApiKey)){
+            if (!apiKey.equals(remoteApiKey)) {
                 throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
             }
         }

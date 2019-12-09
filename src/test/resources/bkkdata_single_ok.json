@@ -1,0 +1,20 @@
+{
+  "location": {
+    "lat": 47.438,
+    "lon": 19.094105
+  },
+  "routeId": "BKK_0230",
+  "tripId": "BKK_C03830418",
+  "vehicleId": "BKK_7322",
+  "stopId": "BKK_009042",
+  "lastUpdateTime": 1575927374,
+  "stopSequence": 1,
+  "departureTime": 1575926820,
+  "estimatedDepartureTime": 1575926820,
+  "arrivalTime": 1575926820,
+  "estimatedArrivalTime": 1575926819,
+  "departureDiff": 34,
+  "arrivalDiff": 1,
+  "model": "VanHool  NewAG300 csuklós autóbusz",
+  "alert": false
+}

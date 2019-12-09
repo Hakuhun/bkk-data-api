@@ -10,7 +10,7 @@ public class CoordToLocationConverter {
         return Location.builder().lon(source.getLon()).lat(source.getLat()).build();
     }
 
-    public Coord toCoord(Location location){
+    public Coord toCoord(Location location) {
         return Coord.builder().lat(location.getLat()).lon(location.getLon()).build();
     }
 }

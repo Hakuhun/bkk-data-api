@@ -1,0 +1,54 @@
+{
+  "coord": {
+    "lon": 18.97,
+    "lat": 47.54
+  },
+  "weather": [
+    {
+      "id": 300,
+      "main": "Drizzle",
+      "description": "light intensity drizzle",
+      "icon": "09n"
+    },
+    {
+      "id": 741,
+      "main": "Fog",
+      "description": "fog",
+      "icon": "50n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "pressure": 1014,
+    "humidity": 100,
+    "temp_min": 2.22,
+    "temp_max": 3.33,
+    "sea_level": null,
+    "grnd_level": null
+  },
+  "wind": {
+    "speed": 3.1,
+    "deg": 130
+  },
+  "clouds": {
+    "all": 90
+  },
+  "rain": {
+    "3h": 0
+  },
+  "snow": {
+    "3h": 0
+  },
+  "dt": 1575835215,
+  "sys": {
+    "type": 1,
+    "id": 6663,
+    "message": null,
+    "country": "HU",
+    "sunrise": 1575785923,
+    "sunset": 1575816795
+  },
+  "id": 3054648,
+  "name": "Budakeszi",
+  "cod": 200
+}
