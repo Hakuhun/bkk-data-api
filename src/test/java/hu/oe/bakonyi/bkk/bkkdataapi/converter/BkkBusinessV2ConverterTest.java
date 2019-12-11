@@ -62,7 +62,6 @@ public class BkkBusinessV2ConverterTest {
         Model200 errroWeather = mapper.readValue(ResourceUtils.getFile("classpath:model200_nok.json"), Model200.class);
         assertThrows(ConversionFailedException.class, ()->converter.convert(bkkData, lastUpdateTime, errroWeather));
         assertThrows(ConversionFailedException.class, ()->converter.convert(bkkData, null, weather));
-
     }
 
     @Test

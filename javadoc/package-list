@@ -1,0 +1,10 @@
+hu.oe.bakonyi.bkk.bkkdataapi
+hu.oe.bakonyi.bkk.bkkdataapi.client
+hu.oe.bakonyi.bkk.bkkdataapi.configuration
+hu.oe.bakonyi.bkk.bkkdataapi.controller
+hu.oe.bakonyi.bkk.bkkdataapi.converter
+hu.oe.bakonyi.bkk.bkkdataapi.kafka
+hu.oe.bakonyi.bkk.bkkdataapi.model
+hu.oe.bakonyi.bkk.bkkdataapi.model.weather
+hu.oe.bakonyi.bkk.bkkdataapi.scheulder
+hu.oe.bakonyi.bkk.bkkdataapi.service
